@@ -14,12 +14,12 @@ public class Main {
         while (true) {
 
             System.out.println("""
-                        Welcome to Hogwarts 
-                         0: Exit 
-                         1: Teachers.method 
-                         2: Students.method 
-                         3: Courses.method 
-                         4: Admins.method 
+                        Welcome to Hogwarts
+                         0: Exit
+                         1: Teachers.method
+                         2: Students.method
+                         3: Courses.method
+                         4: Admins.method
                         
                         Enter your choice:""");
 
