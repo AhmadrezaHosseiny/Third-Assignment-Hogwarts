@@ -6,18 +6,18 @@ public class Account {
     private String password;
     private UUID accountID;
 
-    @Override
+    //@Override
     public boolean validatePassword(String enteredPassword) {
         //TODO
         return false;
     }
 
-    @Override
+    //@Override
     public void changeUsername(String newUsername) {
         //TODO
     }
 
-    @Override
+    //@Override
     public void changePassword(String newPassword) {
         //TODO
     }
