@@ -13,13 +13,15 @@ public class Main {
     public static void runMenu() {
         while (true) {
 
-            System.out.println("Welcome to Hogwarts\r\n" +
-                    " 0: Exit\r\n" +
-                    " 1: Teachers.method\r\n" +
-                    " 2: Students.method\r\n" +
-                    " 3: Courses.method\r\n" +
-                    " 4: Admins.method\r\n" +
-                    "\r\nEnter your choice:");
+            System.out.println("""
+                        Welcome to Hogwarts 
+                         0: Exit 
+                         1: Teachers.method 
+                         2: Students.method 
+                         3: Courses.method 
+                         4: Admins.method 
+                        
+                        Enter your choice:""");
 
             Scanner in = new Scanner(System.in);
             int i = in.nextInt();
