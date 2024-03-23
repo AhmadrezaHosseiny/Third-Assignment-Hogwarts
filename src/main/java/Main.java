@@ -1,17 +1,11 @@
-/*
-    TODO: Import all the classes that you have defined and make use of them to build the program.
- */
-
 import java.io.IOException;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) throws IOException {
         System.out.println("Program started.");
         runMenu();
         System.out.println("Program ended.");
     }
-
     public static void runMenu() throws IOException {
         while (true) {
             System.out.println("""
@@ -44,6 +38,5 @@ public class Main {
                     break;
             }
         }
-
     }
 }

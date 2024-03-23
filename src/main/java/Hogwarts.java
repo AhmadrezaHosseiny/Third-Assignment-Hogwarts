@@ -1,6 +1,5 @@
 /* Serving as a central management system for Hogwarts School of Witchcraft and Wizardry,
  the Hogwarts class facilitates various actions for teachers, students, and administrators.*/
-
 import java.util.ArrayList;
 
 public class Hogwarts {
