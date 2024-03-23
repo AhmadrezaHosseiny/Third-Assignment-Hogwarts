@@ -2,34 +2,36 @@
     TODO: Import all the classes that you have defined and make use of them to build the program.
  */
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        System.out.println("Program started.");
         runMenu();
-
+        System.out.println("Program ended.");
     }
 
-    public static void runMenu() {
+    public static void runMenu() throws IOException 1{
         while (true) {
-
             System.out.println("""
+                        
                         Welcome to Hogwarts
                          0: Exit
-                         1: Teachers.method
+                         1: create Course
                          2: Students.method
                          3: Courses.method
                          4: Admins.method
                         
-                        Enter your choice:""");
-
-            Scanner in = new Scanner(System.in);
-            int i = in.nextInt();
+                       """);
+            System.out.print("Enter your choice:");
+            Scanner sc = new Scanner(System.in);
+            int i = sc.nextInt();
             switch (i) {
                 case 0:
                     return;
                 case 1:
-                    System.out.println("One.");
+                    Assistant.create_course();
                     break;
                 case 2:
                     System.out.println("Two.");
@@ -42,5 +44,6 @@ public class Main {
                     break;
             }
         }
+
     }
 }
