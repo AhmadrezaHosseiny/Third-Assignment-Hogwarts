@@ -12,7 +12,7 @@ public class Main {
         System.out.println("Program ended.");
     }
 
-    public static void runMenu() throws IOException 1{
+    public static void runMenu() throws IOException {
         while (true) {
             System.out.println("""
                         
