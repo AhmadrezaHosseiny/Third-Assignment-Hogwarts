@@ -7,7 +7,7 @@ public class Course {
     private String _title; // Store the title of the course.
     private ArrayList<Student> _students = new ArrayList<>(); // Maintain a list of students enrolled in the course (students).
     private Teacher _teacher; // Track the teacher assigned to teach the course (teacher).
-    public UUID courseID; // !!Assign a unique identifier to each course (courseID), represented by a UUID.
+    public UUID courseID; // Assign a unique identifier to each course (courseID), represented by a UUID.
     Course() {
         courseID = UUID.randomUUID();
         _title = courseID.toString();
