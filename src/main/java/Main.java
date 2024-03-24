@@ -3,9 +3,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println("Program started.");
+        System.out.println("Program started.\r\n");
+        Hogwarts.Init();//ToDo remove after test
         runMenu();
-        System.out.println("Program ended.");
+        System.out.println("\r\nProgram ended.");
     }
     public static void runMenu() throws IOException {
         while (true) {
@@ -13,10 +14,10 @@ public class Main {
                         
                         Welcome to Hogwarts
                          0: Exit
-                         1: create Course
-                         2: Students.method
-                         3: Courses.method
-                         4: Admins.method
+                         1: Init
+                         2: Create Course
+                         3: View Students of a Course
+                          
                         
                        """);
             System.out.print("Enter your choice:");
@@ -26,16 +27,13 @@ public class Main {
                 case 0:
                     return;
                 case 1:
-                    Assistant.create_course();
+                    Hogwarts.Init();
                     break;
                 case 2:
-                    System.out.println("Two.");
+                    Assistant.createCourse();
                     break;
                 case 3:
-                    System.out.println("Three.");
-                    break;
-                case 4:
-                    System.out.println("Four.");
+                    Assistant.viewCoursesAndTheirListOfStudents();
                     break;
             }
         }

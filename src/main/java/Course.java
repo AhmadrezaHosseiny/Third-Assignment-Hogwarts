@@ -18,7 +18,7 @@ public class Course {
     }
     public void set_title(String title) {
         this._title = title;
-        System.out.print("course.set_title( " + title + " ) ");
+        System.out.println("course.set_title( " + title + " ) ");
     }
     public Teacher get_teacher() {
         return _teacher;
@@ -28,5 +28,8 @@ public class Course {
     }
     public void Enroll(Student pStudent) {
         _students.add(pStudent);
+    }
+    public ArrayList<Student> getEnrolledStudents() {
+        return _students;
     }
 }

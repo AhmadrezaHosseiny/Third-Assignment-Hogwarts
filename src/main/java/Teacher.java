@@ -24,7 +24,11 @@ public class Teacher {
     }
 
     // TODO: View Course's List of Students: Check the list of students enrolled in specific courses to monitor their progress.
-
+    public void viewStudentsOf(Course pCourse) {
+        for (Student s : pCourse.getEnrolledStudents()) {
+            System.out.println(s.get_studentID().toString() + " " + s.studentFullName);
+        }
+    }
 
 
     // TODO: Show Teacher’s Score on the Menu: Conveniently monitor their teaching performance by checking their score displayed on the menu.
