@@ -10,13 +10,17 @@ public class Student {
     Student() {
         _studentID = UUID.randomUUID();
         studentFullName = _studentID.toString();
+        Hogwarts.students.add(this);
+        System.out.println("student " + studentFullName + " constructed.");
+    }
+    Student(String pFullName) {
+        _studentID = UUID.randomUUID();
+        studentFullName = pFullName;
+        Hogwarts.students.add(this);
         System.out.println("student " + studentFullName + " constructed.");
     }
     public UUID get_studentID() {
         return _studentID;
-    }
-    public void set_studentID(UUID _studentID) {
-        this._studentID = _studentID;
     }
     // Taking Courses: Enroll in courses by taking them.
     public void TakeCourse(Course pCourse) {
@@ -39,6 +43,23 @@ public class Student {
         }
         return _teachers;
     }
-
+    public void show_teachers_taken_courses_with() {
+        System.out.println("show_teachers_taken_courses_with called.");
+        for (Teacher t : get_teachers_taken_courses_with()) {
+            t.show();
+        }
+    }
+    public static void show_teachers_taken_courses_with_for_all_students() {
+        for (Student s : Hogwarts.students) {
+            s.show_teachers_taken_courses_with();
+        }
+    }
+    public void show( ) {
+        show("\t\t");
+    }
+    public void show(String prefix) {
+            System.out.println(prefix + "studentID: " + this.get_studentID().toString());
+            System.out.println(prefix + "StudentFullName: " + this.studentFullName);
+    }
     // TODO: Taking a Sorting Quiz: Take a quiz to determine their Hogwarts House (Gryffindor, Hufflepuff, Ravenclaw, or Slytherin).
 }

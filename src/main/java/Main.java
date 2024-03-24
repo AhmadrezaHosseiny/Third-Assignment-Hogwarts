@@ -14,10 +14,10 @@ public class Main {
                         
                         Welcome to Hogwarts
                          0: Exit
-                         1: Init
-                         2: Create Course
-                         3: View Students of a Course
-                          
+                         1: Hogwarts.Init()
+                         2: Assistant.createCourse()
+                         3: Assistant.viewCoursesAndTheirListOfStudents()
+                         4: Student.show_teachers_taken_courses_with_for_all_students()
                         
                        """);
             System.out.print("Enter your choice:");
@@ -34,6 +34,9 @@ public class Main {
                     break;
                 case 3:
                     Assistant.viewCoursesAndTheirListOfStudents();
+                    break;
+                case 4:
+                    Student.show_teachers_taken_courses_with_for_all_students();
                     break;
             }
         }

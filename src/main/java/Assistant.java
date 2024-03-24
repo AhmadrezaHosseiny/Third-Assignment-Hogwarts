@@ -19,25 +19,25 @@ public class Assistant {
     /* TODO: Login: Admins can log in to their assistant accounts using their credentials.*/
 
     /* TODO: Remove a Teacher/Student: Assistants possess the authority to remove teachers or students from the platform:
-                                 to the management section in the dashboard.
+                                 Navigate to the management section in the dashboard.
                                  Select the option to remove a teacher or student.
                                  Confirm the action to remove the selected user.*/
 
-    // TODO: View Courses and Their List of Students: Explore the list of courses available on the platform and view enrolled students for each course.
+    // View Courses and Their List of Students: Explore the list of courses available on the platform and view enrolled students for each course.
     public static void viewCoursesAndTheirListOfStudents() throws IOException {
         for (Course c : Hogwarts.courses) {
-            System.out.println("\r\ncourseID: " + c.courseID.toString());
-            System.out.println("title: " + c.get_title());
+            c.show();
             System.out.println("\tstudents: ");
-            for (Student s : c.getEnrolledStudents()) {
-                System.out.println("\t\tstudentID: " + s.get_studentID().toString());
-                System.out.println("\t\tFullName: " + s.studentFullName);
-            }
+            c.showStudents();
         }
     }
 
-
     // TODO: Check Student/Teacher Profile: Access detailed profiles for both students and teachers for administrative purposes.
+
+
+
+
+
     // Create a Course: Follow steps to create a new course on the platform:
     //                  Navigate to the course creation section in the dashboard.
     //                  Provide necessary details for the new course.
@@ -49,9 +49,7 @@ public class Assistant {
         System.out.println("Save? [Y/N]");
         String response = reader.readLine();
         if (!response.equals("n") && !response.equals("N")) {
-            Course c = new Course();
-            c.set_title(title);
-            Hogwarts.courses.add(c);
+            Course c = Course.create(title);
         }
     }
 

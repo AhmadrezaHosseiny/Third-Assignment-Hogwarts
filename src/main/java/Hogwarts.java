@@ -3,22 +3,36 @@ import java.util.ArrayList;
 /* Serving as a central management system for Hogwarts School of Witchcraft and Wizardry,
  the Hogwarts class facilitates various actions for teachers, students, and administrators.*/
 public class Hogwarts {
-
-    // TODO: Define Attributes
+    public static ArrayList<Teacher> teachers = new ArrayList<>();
     public static ArrayList<Course> courses = new ArrayList<>();
+    public static ArrayList<Student> students = new ArrayList<>();
     public static void Init() {
-        Student s1 = new Student();
-        s1.studentFullName = "Student1";
-        Student s2 = new Student();
-        s2.studentFullName = "Student2";
+        System.out.println("\r\ninitialising...\r\n");
 
-        Course c1 = new Course();
-        c1.set_title("Course1");
-        courses.add(c1);
-        Course c2 = new Course();
-        c2.set_title("Course2");
+        Teacher t1 = new Teacher(" Ali");
+        Teacher t2 = new Teacher(" Hassan");
+        Teacher t3 = new Teacher(" John");
+
+        Student s1 = new Student("Alice");
+        Student s2 = new Student("Bob");
+        Student s3 = new Student("Charlie");
+        Student s4 = new Student("Dan");
+        Student s5 = new Student("Erfan");
+        Student s6 = new Student("Farid");
+
+        Course c1 = Course.create("C++");
+        Course c2 = Course.create("Python");
+        Course c3 = Course.create("Java");
+
+        c1.set_teacher(t1);
+        c2.set_teacher(t2);
+        c3.set_teacher(t2);
+
+        c1.Enroll(s1);
+        c1.Enroll(s2);
+        c1.Enroll(s3);
         c2.Enroll(s1);
-        courses.add(c2);
+        c2.Enroll(s2);
     }
     public void viewAllTeachers() {
         //TODO
