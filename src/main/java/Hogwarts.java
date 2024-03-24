@@ -1,7 +1,7 @@
-/* Serving as a central management system for Hogwarts School of Witchcraft and Wizardry,
- the Hogwarts class facilitates various actions for teachers, students, and administrators.*/
 import java.util.ArrayList;
 
+/* Serving as a central management system for Hogwarts School of Witchcraft and Wizardry,
+ the Hogwarts class facilitates various actions for teachers, students, and administrators.*/
 public class Hogwarts {
 
     // TODO: Define Attributes
@@ -22,12 +22,12 @@ public class Hogwarts {
         //TODO
     }
 
-    // Managing lists of teachers, courses, admins, and students from different Houses.
-    // Rating teachers and leaving comments for them.
-    // Viewing all teachers, students, and courses.
-    // Viewing individual student profiles.
-    // Requesting courses and submitting scores for students.
-    // Requesting courses as a teacher.
-    // Rating teachers and leaving comments for them as a student.
-    // Retrieving course information via UUID.
+    // TODO: Managing lists of teachers, courses, admins, and students from different Houses.
+    // TODO: Rating teachers and leaving comments for them.
+    // TODO: Viewing all teachers, students, and courses.
+    // TODO: Viewing individual student profiles.
+    // TODO: Requesting courses and submitting scores for students.
+    // TODO :Requesting courses as a teacher.
+    // TODO: Rating teachers and leaving comments for them as a student.
+    // TODO: Retrieving course information via UUID.
 }
