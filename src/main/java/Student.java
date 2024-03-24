@@ -11,13 +11,11 @@ public class Student {
         pCourse.Enroll(this);
         _courses.add(pCourse);
     }
-
     // Viewing All Courses Taken: View a list of all courses taken.
     public ArrayList<Course> get_courses() {
         return _courses;
 
     }
-
     // Viewing All Teachers: Access a list of all teachers taken courses with.
     public ArrayList<Teacher> get_teachers_taken_courses_with() {
         ArrayList<Teacher> _teachers = new ArrayList<>();
