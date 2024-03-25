@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println("Program started.\r\n");
-        Hogwarts.Init();//ToDo remove after test
+        Hogwarts.log("Program started.\r\n");
+        Hogwarts.Init();//ToDo: remove after test
         runMenu();
-        System.out.println("\r\nProgram ended.");
+        Hogwarts.log("\r\nProgram ended.");
     }
     public static void runMenu() throws IOException {
         while (true) {
