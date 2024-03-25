@@ -33,7 +33,11 @@ public class Student {
         Hogwarts.log("takecourse end");
     }
 
-
+    public void AddCourse(Course pCourse) {
+        Hogwarts.log("add course start");
+        _courses.add(pCourse);
+        Hogwarts.log("addcourse end");
+    }
 
 
     // Viewing All Courses Taken: View a list of all courses taken.

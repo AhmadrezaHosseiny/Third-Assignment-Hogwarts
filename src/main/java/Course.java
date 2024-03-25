@@ -42,6 +42,7 @@ public class Course {
     public void Enroll(Student pStudent) {
         Hogwarts.log("enroll start");
         _students.add(pStudent);
+        pStudent.AddCourse(this);
     }
     public ArrayList<Student> getEnrolledStudents() {
         Hogwarts.log("getEnrolledStudents start");

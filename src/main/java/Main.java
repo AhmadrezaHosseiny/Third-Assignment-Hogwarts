@@ -12,7 +12,7 @@ public class Main {
         while (true) {
             System.out.println("""
                         
-                        Welcome to Hogwarts
+                         Welcome to Hogwarts
                          0: Exit
                          1: Hogwarts.Init()
                          2: Assistant.createCourse()
