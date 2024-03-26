@@ -6,43 +6,45 @@ import java.util.UUID;
 public class Course {
     private String _title; // Store the title of the course.
     private ArrayList<Student> _students = new ArrayList<>(); // Maintain a list of students enrolled in the course (students).
-    private UUID courseID; // Assign a unique identifier to each course (courseID), represented by a UUID.
+    private UUID courseId; // Assign a unique identifier to each course (courseID), represented by a UUID.
+    public ArrayList<Score> scores = new ArrayList<>();
     public Teacher _teacher; // Track the teacher assigned to teach the course (teacher).
     Course(UUID pID, String title) {
         Hogwarts.log("course constructor start");
-        courseID = pID;
+        courseId = pID;
         _title = title;
         Hogwarts.courses.add(this);
-        Hogwarts.log("Course " + courseID.toString() + " " + _title + " constructed.");
+        Hogwarts.log("course " + courseId.toString() + " " + _title + " constructed.");
     }
     public static Course create(String title) {
         Hogwarts.log("create start");
         return new Course(UUID.randomUUID(), title);
     }
-    public UUID getCourseID() {
-        Hogwarts.log("getcourseid start");
-        return courseID;
+    public UUID getCourseId() {
+        Hogwarts.log("getCourseId start");
+        return courseId;
     }
-    public String get_title() {
-        Hogwarts.log("gettitle start");
+    public String getTitle() {
+        Hogwarts.log("getTitle start");
         return _title;
     }
-    public void set_title(String title) {
-        Hogwarts.log("course.settitle start");
+    public void setTitle(String title) {
+        Hogwarts.log("course.setTitle start");
         this._title = title;
     }
-    public Teacher get_teacher() {
-        Hogwarts.log("getteacher start");
+    public Teacher getTeacher() {
+        Hogwarts.log("getTeacher start");
         return _teacher;
     }
-    public void set_teacher(Teacher _teacher) {
-        Hogwarts.log("set teacher start");
+    public void setTeacher(Teacher _teacher) {
+        Hogwarts.log("setTeacher start");
+        _teacher.addCourse(this);
         this._teacher = _teacher;
     }
-    public void Enroll(Student pStudent) {
+    public void enroll(Student pStudent) {
         Hogwarts.log("enroll start");
         _students.add(pStudent);
-        pStudent.AddCourse(this);
+        pStudent.addCourse(this);
     }
     public ArrayList<Student> getEnrolledStudents() {
         Hogwarts.log("getEnrolledStudents start");
@@ -53,15 +55,31 @@ public class Course {
         showStudents("\t\t");
     }
     public void showStudents(String prefix) {
-        Hogwarts.log("showstudents start");
+        Hogwarts.log("showStudents start");
         for (Student s : _students) {
             s.show(prefix);
         }
     }
     public void show() {
         Hogwarts.log("show start");
-        System.out.println("\r\ncourseID: " + this.courseID.toString());
-        System.out.println("title: " + this.get_title());
+        System.out.println("\r\ncourseId: " + this.courseId.toString());
+        System.out.println("title: " + this.getTitle());
         Hogwarts.log("show end");
+    }
+    /*public static Course retrieveByUuid(UUID Id) {
+        for (Course c : Hogwarts.courses) {
+            if (Id.equals(c.courseId)) {
+                return c;
+            }
+        }
+        return null;
+    }*/
+    public void showScore() {
+        this.show();
+        for (Score s : this.scores) {
+            System.out.print(s.student.studentFullName);
+            System.out.print(" ");
+            System.out.println(s.result);
+        }
     }
 }

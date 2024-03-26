@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -5,26 +8,27 @@ import java.util.UUID;
  and access valuable information to enhance their teaching experience on the platform.*/
 public class Teacher {
     private ArrayList<Course> _courses = new ArrayList<>();
-    private UUID _teacherID;
-    private String _FullName;
+    private UUID _teacherId;
+    private String _fullName;
+    public double teacherScore;
     Teacher(UUID pID, String pFullName) {
         Hogwarts.log("teacher constructor start");
-        _teacherID = pID;
-        _FullName = pFullName;
+        _teacherId = pID;
+        _fullName = pFullName;
         Hogwarts.teachers.add(this);
-        Hogwarts.log("teacher " + _teacherID.toString() + " " + _FullName + " constructed.");
+        Hogwarts.log("teacher " + _teacherId.toString() + " " + _fullName + " constructed.");
     }
     public static Teacher create(String pFullName) {
         Hogwarts.log("create start");
         return new Teacher(UUID.randomUUID(), pFullName);
     }
-    public String get_FullName() {
-        Hogwarts.log("getfullname start");
-        return _FullName;
+    public String getFullName() {
+        Hogwarts.log("getFullName start");
+        return _fullName;
     }
-    public UUID get_teacherID() {
-        Hogwarts.log("getteacherid start");
-        return _teacherID;
+    public UUID getTeacherId() {
+        Hogwarts.log("getTeacherId start");
+        return _teacherId;
     }
 
 
@@ -33,53 +37,51 @@ public class Teacher {
     //      Request an account by contacting the assistant.
     //      Upon receiving access, provide necessary information to complete the sign-up process.
 
-
-
-
-
-
     // Take Courses: Teachers can explore and enroll in courses they wish to teach, displayed on their dashboard.
-    public void TakeCourse(Course pCourse) {
-        Hogwarts.log("takecourse start");
+    public void takeCourse(Course pCourse) {
+        Hogwarts.log("takeCourse start");
         _courses.add(pCourse);
-        pCourse.set_teacher(this);
-        Hogwarts.log("takecourse end");
+        pCourse.setTeacher(this);
+        Hogwarts.log("takeCourse end");
     }
-
-
-
 
 
     //TODO: Score Students: Teachers can evaluate students by navigating to the scoring section on their dashboard,
     //                      selecting the appropriate course, and entering scores for each student.
-
-
-
-
-
-
-
+    public void showScore() throws IOException {
+        for (Course c : this._courses) {
+            c.showScore();
+        }
+    }
+    public void addCourse(Course c) {
+        _courses.add(c);
+    }
+    public static void showScoreForAllTeachers() throws IOException {
+        for (Teacher t : Hogwarts.teachers) {
+            t.show("");
+            t.showScore();
+        }
+    }
 
     // View Courses List: Access a comprehensive list of courses they teach for an overview of current teaching assignments.
     public ArrayList<Course> getCourses() {
-        Hogwarts.log("getcourses start");
+        Hogwarts.log("getCourses start");
         return _courses;
     }
+
+
     // View Course's List of Students: Check the list of students enrolled in specific courses to monitor their progress.
     //!This function is implemented in course.
     public void showStudentsOf(Course pCourse) {
-        Hogwarts.log("showstudentsof start");
+        Hogwarts.log("showStudentsOf start");
         pCourse.showStudents();
-        Hogwarts.log("showstudentsof end");
+        Hogwarts.log("showStudentsOf end");
     }
     public void show(String prefix) {
         Hogwarts.log("show start");
-        System.out.println("\r\n"+prefix+"teacherID: " + _teacherID.toString());
-        System.out.println(prefix+"fullname: " + _FullName);
+        System.out.println("\r\n"+prefix+"teacherID: " + _teacherId.toString());
+        System.out.println(prefix+"fullName: " + _fullName);
     }
-
-
-
 
     //TODO: Show Teacher’s Score on the Menu: Conveniently monitor their teaching performance by checking their score displayed on the menu.
 

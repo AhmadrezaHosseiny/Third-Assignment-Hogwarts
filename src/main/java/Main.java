@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) throws IOException {
         Hogwarts.log("Program started.\r\n");
@@ -20,6 +19,9 @@ public class Main {
                          4: Student.show_teachers_taken_courses_with_for_all_students()
                          5: Assistant.Login()
                          6: Assistant.Signup()
+                         7; Assistant.removeTeacher()
+                         8: Teacher.showScoreForAllTeachers()
+                         9: Toggle debug
                          
                        """);
             System.out.print("Enter your choice:");
@@ -35,7 +37,7 @@ public class Main {
                     Assistant.createCourse();
                     break;
                 case 3:
-                    Assistant.viewCoursesAndTheirListOfStudents();
+                    Assistant.view_courses_and_their_list_of_students();
                     break;
                 case 4:
                     Student.show_teachers_taken_courses_with_for_all_students();
@@ -44,9 +46,17 @@ public class Main {
                     Assistant.Login();
                     break;
                 case 6:
-                Assistant.Signup();
-                break;
-
+                    Assistant.Signup();
+                    break;
+                case 7:
+                    Assistant.removeTeacher();
+                    break;
+                case 8:
+                    Teacher.showScoreForAllTeachers();
+                    break;
+                case 9:
+                    Hogwarts.debug=!Hogwarts.debug;
+                    break;
             }
         }
     }

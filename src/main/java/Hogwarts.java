@@ -7,7 +7,7 @@ public class Hogwarts {
     public static ArrayList<Course> courses = new ArrayList<>();
     public static ArrayList<Student> students = new ArrayList<>();
     public static ArrayList<Account> accounts = new ArrayList<>();
-    public static Account CurrentAccount;
+    public static Account currentAccount;
     public static boolean debug = false;
     public static String prefix = "-->";
     public static void log(String s) {
@@ -15,58 +15,81 @@ public class Hogwarts {
     }
     public static void Init() {
         Hogwarts.log("init start");
-
         System.out.println("\r\ninitialising...\r\n");
+
         Hogwarts.log(Integer.toString(Hogwarts.teachers.size()));
-        Teacher t1 = Teacher.create(" Ali");
+        Teacher t1 = Teacher.create("Ali");
         Hogwarts.log(Integer.toString(Hogwarts.teachers.size()));
-        Teacher t2 = Teacher.create(" Hassan");
+        Teacher t2 = Teacher.create("Hassan");
         Hogwarts.log(Integer.toString(Hogwarts.teachers.size()));
-        Teacher t3 = Teacher.create(" John");
+        Teacher t3 = Teacher.create("John");
         Hogwarts.log(Integer.toString(Hogwarts.teachers.size()));
 
         Student s1 = Student.create("Alice");
         Hogwarts.log(Integer.toString(Hogwarts.students.size()));
         Student s2 = Student.create("Bob");
         Hogwarts.log(Integer.toString(Hogwarts.students.size()));
-        Student s3 = Student.create("Charlie");Hogwarts.log(Integer.toString(Hogwarts.students.size()));
-        Student s4 = Student.create("Dan");Hogwarts.log(Integer.toString(Hogwarts.students.size()));
-        Student s5 = Student.create("Erfan");Hogwarts.log(Integer.toString(Hogwarts.students.size()));
-        Student s6 = Student.create("Farid");Hogwarts.log(Integer.toString(Hogwarts.students.size()));
+        Student s3 = Student.create("Charlie");
+        Hogwarts.log(Integer.toString(Hogwarts.students.size()));
+        Student s4 = Student.create("Dan");
+        Hogwarts.log(Integer.toString(Hogwarts.students.size()));
+        Student s5 = Student.create("Erfan");
+        Hogwarts.log(Integer.toString(Hogwarts.students.size()));
+        Student s6 = Student.create("Farid");
+        Hogwarts.log(Integer.toString(Hogwarts.students.size()));
 
         Course c1 = Course.create("C++");
         Course c2 = Course.create("Python");
         Course c3 = Course.create("Java");
 
-        c1.set_teacher(t1);
-        c2.set_teacher(t2);
-        c3.set_teacher(t2);
+        c1.setTeacher(t1);
+        c2.setTeacher(t2);
+        c3.setTeacher(t2);
 
-        c1.Enroll(s1);
-        c1.Enroll(s2);
-        c1.Enroll(s3);
-        c2.Enroll(s1);
-        c2.Enroll(s2);
+        c1.enroll(s1);
+        c1.enroll(s2);
+        c1.enroll(s3);
+        c2.enroll(s1);
+        c2.enroll(s2);
 
         Account a1 = new Account("a", "1");
 
+        Score x1 = new Score(s1, 1);
+        Score x2 = new Score(s2, 2);
+        Score x3 = new Score(s3, 3);
+
+        Score x4 = new Score(s1, 4);
+        Score x5 = new Score(s2, 5);
+        Score x6 = new Score(s3, 6);
+
+        Score x7 = new Score(s4, 7);
+        Score x8 = new Score(s5, 8);
+        Score x9 = new Score(s6, 9);
+
+        c1.scores.add(x1);
+        c1.scores.add(x2);
+        c1.scores.add(x3);
+
+        c2.scores.add(x4);
+        c2.scores.add(x5);
+        c2.scores.add(x6);
+
+        c3.scores.add(x7);
+        c3.scores.add(x8);
+        c3.scores.add(x9);
     }
     public void viewAllTeachers() {
-        //TODO
+        for (Teacher t : Hogwarts.teachers) t.show("");
     }
     public void viewAllStudents() {
-        //TODO
+        for (Student s : Hogwarts.students) s.show();
     }
     public void viewAllCourses() {
-        //TODO
+        for (Course c : Hogwarts.courses) c.show();
     }
 
-    //TODO: Managing lists of teachers, courses, admins, and students from different Houses.
     //TODO: Rating teachers and leaving comments for them.
-    //TODO: Viewing all teachers, students, and courses.
-    //TODO: Viewing individual student profiles.
     //TODO: Requesting courses and submitting scores for students.
     //TODO :Requesting courses as a teacher.
     //TODO: Rating teachers and leaving comments for them as a student.
-    //TODO: Retrieving course information via UUID.
 }

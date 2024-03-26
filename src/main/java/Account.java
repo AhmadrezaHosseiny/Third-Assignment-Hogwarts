@@ -1,35 +1,31 @@
 import java.util.UUID;
 
 public class Account {
-    private String _username;
+    private String _userName;
     // TODO: Passwords should hashed
-    private String _password;
-    private UUID _accountID;
+    private String _passWord;
+    private UUID _accountId;
     Account(String u, String p) {
-        _accountID = UUID.randomUUID();
-        _username = u;
-        _password = p;
+        _accountId = UUID.randomUUID();
+        _userName = u;
+        _passWord = p;
         Hogwarts.accounts.add(this);
     }
     public boolean validatePassword(String enteredPassword) {
-        if (_password.equals(enteredPassword)) return true;
+        if (_passWord.equals(enteredPassword)) return true;
         return false;
     }
     public boolean validateUserName(String enteredUserName) {
-        if (_username.equals(enteredUserName)) return true;
+        if (_userName.equals(enteredUserName)) return true;
         return false;
     }
-
-    //@Override
     public void changeUsername(String newUsername) {
-        //TODO
+        _userName = newUsername;
     }
-
-    //@Override
     public void changePassword(String newPassword) {
-        //TODO
+        _passWord = newPassword;
     }
     public void show() {
-        System.out.println(_username + " " + _accountID.toString());
+        System.out.println(_userName + " " + _accountId.toString());
     }
 }
