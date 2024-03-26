@@ -7,30 +7,46 @@ import java.io.InputStreamReader;
  */
 public class Assistant {
 
+    private Account _account;
 
-    //TODO: Sign Up: Only administrators (other assistants) can create new assistant accounts. Follow these steps to create a new assistant account:
-    //                      Access the admin panel.
-    //                      Utilize the provided tools to create a new assistant account.
+    // Sign Up: Only administrators (other assistants) can create new assistant accounts.
+    //               Access the admin panel.
+    //               Utilize the provided tools to create a new assistant account.
+    public static void Signup() throws IOException {
+        Hogwarts.log("Signup start");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print("Enter Username:");
+            String Username = reader.readLine();
+            System.out.print("Enter Password: ");
+            String Password = reader.readLine();
+            new Account(Username, Password);
+            for (Account a : Hogwarts.accounts) a.show();
+    }
 
-
-
-
-
-
-
-    //TODO: Login: Admins can log in to their assistant accounts using their credentials.
-
-
-
-
-
-
-
+    // Login: Admins can log in to their assistant accounts using their credentials.
+    public static boolean Login() throws IOException {
+        Hogwarts.log("login start");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        while (true) {
+            System.out.print("Enter Username:");
+            String Username = reader.readLine();
+            System.out.print("Enter Password: ");
+            String Password = reader.readLine();
+            boolean result = false;
+            for (Account a : Hogwarts.accounts) {
+                if (a.validateUserName(Username) && a.validatePassword(Password)) {
+                    Hogwarts.CurrentAccount = a;
+                    System.out.println("Login Successful");
+                    return true;
+                }
+            }
+        }
+    }
 
     //TODO: Remove a Teacher/Student: Assistants possess the authority to remove teachers or students from the platform:
-    //                                 Navigate to the management section in the dashboard.
-    //                                 Select the option to remove a teacher or student.
-    //                                 Confirm the action to remove the selected user.
+    //                                Navigate to the management section in the dashboard.
+    //                                Select the option to remove a teacher or student.
+    //                                Confirm the action to remove the selected user.
 
 
 

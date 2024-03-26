@@ -72,10 +72,10 @@ public class Teacher {
         pCourse.showStudents();
         Hogwarts.log("showstudentsof end");
     }
-    public void show() {
+    public void show(String prefix) {
         Hogwarts.log("show start");
-        System.out.println("\r\nteacherID: " + _teacherID.toString());
-        System.out.println("fullname: " + _FullName);
+        System.out.println("\r\n"+prefix+"teacherID: " + _teacherID.toString());
+        System.out.println(prefix+"fullname: " + _FullName);
     }
 
 

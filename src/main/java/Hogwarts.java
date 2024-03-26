@@ -6,7 +6,9 @@ public class Hogwarts {
     public static ArrayList<Teacher> teachers = new ArrayList<>();
     public static ArrayList<Course> courses = new ArrayList<>();
     public static ArrayList<Student> students = new ArrayList<>();
-    public static boolean debug = true;
+    public static ArrayList<Account> accounts = new ArrayList<>();
+    public static Account CurrentAccount;
+    public static boolean debug = false;
     public static String prefix = "-->";
     public static void log(String s) {
         if (Hogwarts.debug) System.out.println(prefix + s);
@@ -45,6 +47,9 @@ public class Hogwarts {
         c1.Enroll(s3);
         c2.Enroll(s1);
         c2.Enroll(s2);
+
+        Account a1 = new Account("a", "1");
+
     }
     public void viewAllTeachers() {
         //TODO

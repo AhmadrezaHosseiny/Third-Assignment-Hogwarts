@@ -18,7 +18,9 @@ public class Main {
                          2: Assistant.createCourse()
                          3: Assistant.viewCoursesAndTheirListOfStudents()
                          4: Student.show_teachers_taken_courses_with_for_all_students()
-                        
+                         5: Assistant.Login()
+                         6: Assistant.Signup()
+                         
                        """);
             System.out.print("Enter your choice:");
             Scanner sc = new Scanner(System.in);
@@ -38,6 +40,13 @@ public class Main {
                 case 4:
                     Student.show_teachers_taken_courses_with_for_all_students();
                     break;
+                case 5:
+                    Assistant.Login();
+                    break;
+                case 6:
+                Assistant.Signup();
+                break;
+
             }
         }
     }

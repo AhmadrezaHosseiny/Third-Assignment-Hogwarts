@@ -64,7 +64,7 @@ public class Student {
     public void show_teachers_taken_courses_with() {
         Hogwarts.log("show_teachers_taken_courses_with start");
         for (Teacher t : get_teachers_taken_courses_with()) {
-            t.show();
+            t.show("\t\t4");
         }
         Hogwarts.log("show_teachers_taken_courses_with end");
     }
@@ -72,6 +72,8 @@ public class Student {
     public static void show_teachers_taken_courses_with_for_all_students() {
         Hogwarts.log("show_teachers_taken_courses_with_for_all_students start");
         for (Student s : Hogwarts.students) {
+            System.out.println();
+            s.show("");
             s.show_teachers_taken_courses_with();
         }
         Hogwarts.log("show_teachers_taken_courses_with_for_all_students end");
